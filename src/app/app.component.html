@@ -1,0 +1,33 @@
+<div *ngIf="'1 - *ngIf as variable' as variable">
+  {{ variable }}
+</div>
+
+<div *ngIf="'2 - *ngIf and let variable'; let variable">
+  {{ variable }}
+</div>
+
+<div *ngStructVar="'3 - *ngStructVar as variable' as variable">
+  {{ variable }}
+</div>
+
+<ng-template
+  [ngStructVar]="'4 - [ngStructVar] in template, let-variable, with name'"
+  let-variable="ngStructVar"
+>
+  <div>
+    {{ variable }}
+  </div>
+</ng-template>
+
+<ng-template
+  [ngStructVar]="'5 - [ngStructVar] in template, let-variable, no name'"
+  let-variable
+>
+  <div>
+    {{ variable }}
+  </div>
+</ng-template>
+
+<div *ngStructVar="'6 - *ngStructVar and let variable'; let variable">
+  {{ variable }}
+</div>
